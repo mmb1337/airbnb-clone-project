@@ -153,6 +153,44 @@ Automates testing, building, and deployment of the application. Enhances team pr
 
 ---
 
+## 🔐 API Security
+
+Ensuring robust security in the backend API is critical for maintaining trust, protecting data, and supporting safe financial transactions. The Airbnb Clone project will implement the following security measures:
+
+### 🔑 Authentication
+All sensitive endpoints will require secure user authentication, typically through token-based systems like JWT (JSON Web Tokens). This prevents unauthorized users from accessing or manipulating private data.
+
+### 🛂 Authorization
+Role-based access control (RBAC) ensures that only users with the correct permissions (e.g., host vs. guest) can access specific features.
+
+### 🚦 Rate Limiting
+Prevents API abuse and brute-force attacks by restricting the number of requests allowed over a certain time period.
+
+### 🔒 Data Validation and Input Sanitization
+Mitigates risks like SQL injection and XSS by validating and sanitizing user inputs.
+
+### 🧾 Secure Payment Handling
+Payment data is processed through secure, third-party gateways, ensuring PCI compliance and protecting user finances.
+
+---
+
+## ⚙️ CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) is a crucial component of modern software development. It automates the integration, testing, and deployment processes, allowing developers to deliver high-quality code quickly and efficiently.
+
+### Why CI/CD is Important
+- **Faster Development Cycles**: Automates repetitive tasks like testing and deployment.
+- **Improved Code Quality**: Runs automated tests and linting tools on every push to catch errors early.
+- **Consistent Deployments**: Reduces the risk of human error by using scripted, repeatable deployment workflows.
+
+### Tools Used
+- **GitHub Actions**: Automates testing and deployment workflows on every pull request or push.
+- **Docker**: Ensures consistency across development, testing, and production environments.
+- **Docker Compose**: Simplifies multi-container environments for local and CI environments.
+- **Shell Scripts or Makefiles** (optional): Standardize build and deploy commands across team members.
+
+---
+
 ## 🚀 Key Highlights
 
 ### 🔹 Hands-on GitHub Repository Management

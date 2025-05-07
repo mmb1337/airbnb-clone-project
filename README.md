@@ -57,6 +57,102 @@ Coordinates the team, manages the project timeline, assigns responsibilities, an
 
 ---
 
+## 🗃️ Database Design
+
+This project uses a relational database structure to manage data related to users, listings, bookings, and transactions. Below are the key entities and their relationships:
+
+### 👤 Users
+- `id`: Unique identifier
+- `name`: Full name of the user
+- `email`: User's email address (unique)
+- `role`: Indicates if the user is a guest or a host
+- `created_at`: Timestamp of account creation
+
+**Relationships**:
+- A user can own multiple properties.
+- A user can make multiple bookings.
+- A user can leave multiple reviews.
+
+---
+
+### 🏡 Properties
+- `id`: Unique property identifier
+- `user_id`: Foreign key referencing the owner (host)
+- `title`: Title or name of the property
+- `location`: Address or coordinates
+- `price_per_night`: Rental price
+
+**Relationships**:
+- A property belongs to one user (host).
+- A property can have multiple bookings and reviews.
+
+---
+
+### 📅 Bookings
+- `id`: Unique booking identifier
+- `user_id`: Foreign key referencing the guest
+- `property_id`: Foreign key referencing the booked property
+- `start_date`: Start date of the booking
+- `end_date`: End date of the booking
+
+**Relationships**:
+- A booking is made by one user (guest).
+- A booking is for one property.
+
+---
+
+### ✍️ Reviews
+- `id`: Unique review identifier
+- `user_id`: Foreign key referencing the reviewer
+- `property_id`: Foreign key referencing the reviewed property
+- `rating`: Numerical rating (e.g., 1 to 5)
+- `comment`: Textual review
+
+**Relationships**:
+- A review is written by one user.
+- A review belongs to one property.
+
+---
+
+### 💳 Payments
+- `id`: Unique payment identifier
+- `booking_id`: Foreign key referencing the related booking
+- `amount`: Total amount paid
+- `payment_method`: e.g., credit card, PayPal
+- `status`: e.g., completed, pending, failed
+
+**Relationships**:
+- A payment is tied to one booking.
+
+---
+
+## 🧩 Feature Breakdown
+
+Below are the main features of the Airbnb Clone project and how each contributes to its overall functionality:
+
+### 👥 User Management
+Enables users to register, log in, and manage their profiles. It includes role-based access (e.g., guest vs. host), which ensures users interact with the platform according to their intended functions.
+
+### 🏘️ Property Management
+Allows hosts to list, update, or remove properties. This feature ensures property data (descriptions, images, pricing, availability) is kept accurate and user-friendly.
+
+### 📅 Booking System
+Enables guests to book available properties by selecting check-in/check-out dates. It manages availability, prevents double bookings, and supports time-bound reservations.
+
+### ✍️ Review System
+Allows users to leave feedback and ratings on properties they’ve stayed at. This feature helps maintain trust and transparency across the platform.
+
+### 💳 Payment Integration
+Handles secure transactions between guests and hosts. It tracks payments, supports multiple payment methods, and ensures reliable booking confirmations.
+
+### 🔐 Authentication & Security
+Implements secure login mechanisms, input validation, and access control. Protects user data and ensures that only authorized actions are performed.
+
+### 🔄 CI/CD Pipeline
+Automates testing, building, and deployment of the application. Enhances team productivity and maintains code quality through continuous integration practices.
+
+---
+
 ## 🚀 Key Highlights
 
 ### 🔹 Hands-on GitHub Repository Management
